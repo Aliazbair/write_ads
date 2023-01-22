@@ -1,0 +1,18 @@
+---
+import { FooterLinks } from '../data';
+---
+
+<footer class='bg-white text-gray-500 text-[12px] p-[20px]'>
+  <div class='mx-w-[1100px] mx-auto pl-[20px] pb-[20px] flex items-center justify-between'>
+    <div><i class='fas fa-globe fa-2x'></i> English (United States)</div>
+    <ul class='flex space-x-2'> 
+      {
+        FooterLinks.map((footer) => (
+          <li>
+            <a href='#'>{footer}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</footer>

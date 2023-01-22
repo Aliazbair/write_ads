@@ -1,0 +1,28 @@
+---
+export interface Props {
+  data: any;
+}
+const { data } = Astro.props as Props;
+---
+
+<section
+  id='home-cards'
+  class='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5'
+>
+  {
+    data.map((d: { img: string; title: string; text: string }) => (
+      <div class=' '>
+        <img
+          src={d.img}
+          class='rounded-sm object-cover w-full mt-[40px]'
+          alt=''
+        />
+        <h3 class='text-sm font-bold px-1 py-2'>{d.title}</h3>
+        <p class='text-sm'>{d.text}</p>
+        <a href='#' class='text-indigo-700 flex '>
+          Learn More <img class='w-5 -rotate-180 hover:ml-2' src='/left.png' alt='' />
+        </a>
+      </div>
+    ))
+  }
+</section>

@@ -1,0 +1,65 @@
+---
+import { NavLinks } from '../data';
+---
+
+<div class='bg-gray-800s px-10 py-2 shadow'>
+  <nav class='flex items-center justify-between'>
+    <!-- logo -->
+    <img src='/logo.png' class='w-24' alt='' />
+
+    <ul class='md:flex hidden space-x-3'>
+      {
+        NavLinks.map((link) => (
+          <li class='font-bold text-gray-500 hover:text-violet-800'>
+            <a href={`#${link}`}>{link}</a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <!-- right menu -->
+    <div class='flex items-center space-x-2'>
+      <img
+        src='/search.svg'
+        class='cursor-pointer bg-gray-900 w-8 rounded p-1'
+        alt=''
+      />
+      <img
+        src='/menu.svg'
+        id='menu-btn'
+        class='md:hidden cursor-pointer bg-gray-900 w-8 rounded p-1'
+        alt=''
+      />
+    </div>
+    <!-- <ul>
+     
+      <li>
+        <a href='#'>s</a>
+      </li>
+    </ul> -->
+
+    <!-- mobile -->
+    <ul
+      id='main-menu'
+      class='md:hidden block absolute top-0 left-0 bg-gray-800 w-[50%] h-full border border-gray-100 opacity-90 p-[30px] translate-x-[-500px] transition-all duration-500 ease-linear'
+    >
+      {
+        NavLinks.map((link) => (
+          <li class='mt-10 font-bold text-gray-200 p-[10px] border-b text-[14px] hover:text-violet-800 '>
+            <a href={`#${link}`}>{link}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</div>
+
+<script>
+  document
+    .querySelector('#menu-btn')
+    .addEventListener('click', () =>
+      document
+        .querySelector('#main-menu')
+        .classList.toggle('translate-x-[-20px]')
+    );
+</script>

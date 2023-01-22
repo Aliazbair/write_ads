@@ -1,0 +1,16 @@
+---
+export interface Props {
+  title: string;
+  text: string;
+  linkText: string;
+}
+const { title, text, linkText } = Astro.props as Props;
+---
+
+<section >
+  <div class='md:w-[40%] w-full p-10'>
+    <h2 class='font-bold text-4xl'>{title}</h2>
+    <p class='mb-5'>{text}</p>
+    <a href='' class='bg-indigo-700 px-2 py-1 rounded '>{linkText}</a>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+---
+import { Follows} from '../data';
+---
+
+<section class='flex items-center justify-start m-7 space-x-2'>
+  <p>Follow Microsoft</p>
+  {
+    Follows.map((link) => (
+      <a href={link.url}>
+        <img src={link.img} alt='' />
+      </a>
+    ))
+  }
+</section>
